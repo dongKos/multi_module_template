@@ -1,0 +1,10 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:13306/r2dbc_test?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+    username: root
+    password: root
+    pool:
+      initial-size: 20
+      max-size: 20
+      max-life-time: 10s
+      validation-query: SELECT 1
