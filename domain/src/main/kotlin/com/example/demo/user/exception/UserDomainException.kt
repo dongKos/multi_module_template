@@ -4,4 +4,4 @@ import com.example.demo.exception.DomainException
 
 class UserDomainException(
     override val message: String,
-): DomainException(message)
+) : DomainException(message)

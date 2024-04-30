@@ -5,5 +5,4 @@ import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface UserR2DBCRepository: CoroutineCrudRepository<UserEntity, Long> {
-}
+interface UserR2DBCRepository : CoroutineCrudRepository<UserEntity, Long>

@@ -9,5 +9,4 @@ class UserEntity(
     @Id
     @Column("id") val id: Long = 0,
     @Column("name") val name: String,
-) {
-}
+)

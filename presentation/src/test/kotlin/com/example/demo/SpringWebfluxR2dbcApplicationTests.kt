@@ -5,9 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class SpringWebfluxR2dbcApplicationTests {
-
     @Test
     fun contextLoads() {
     }
-
 }

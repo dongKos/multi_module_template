@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service
 class UserService(
     private val userQueryPort: UserQueryPort,
     private val userCommandPort: UserCommandPort,
-): UserUseCase {
-
+) : UserUseCase {
     override suspend fun createUser(name: String): User {
         return userCommandPort.createUser(User(name = name))
     }

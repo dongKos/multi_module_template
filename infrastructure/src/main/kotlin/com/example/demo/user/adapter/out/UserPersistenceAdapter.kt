@@ -3,10 +3,10 @@ package com.example.demo.user.adapter.out
 import com.example.demo.user.converter.UserPersistenceConverter.toUser
 import com.example.demo.user.converter.UserPersistenceConverter.toUserEntity
 import com.example.demo.user.exception.UserDomainException
-import com.example.demo.user.repository.UserR2DBCRepository
 import com.example.demo.user.model.User
 import com.example.demo.user.port.out.UserCommandPort
 import com.example.demo.user.port.out.UserQueryPort
+import com.example.demo.user.repository.UserR2DBCRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.springframework.stereotype.Repository
@@ -14,8 +14,7 @@ import org.springframework.stereotype.Repository
 @Repository
 class UserPersistenceAdapter(
     private val userR2DBCRepository: UserR2DBCRepository,
-): UserQueryPort, UserCommandPort {
-
+) : UserQueryPort, UserCommandPort {
     override suspend fun createUser(user: User): User {
         return userR2DBCRepository.save(user.toUserEntity()).toUser()
     }
