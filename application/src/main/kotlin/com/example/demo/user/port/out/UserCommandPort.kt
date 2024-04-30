@@ -1,4 +1,4 @@
-package com.example.demo.port
+package com.example.demo.user.port.out
 
 import com.example.demo.user.model.User
 

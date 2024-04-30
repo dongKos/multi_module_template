@@ -1,8 +1,9 @@
-package com.example.demo.usecase
+package com.example.demo.user
 
 import com.example.demo.user.model.User
-import com.example.demo.port.UserCommandPort
-import com.example.demo.port.UserQueryPort
+import com.example.demo.user.port.`in`.UserUseCase
+import com.example.demo.user.port.out.UserCommandPort
+import com.example.demo.user.port.out.UserQueryPort
 import kotlinx.coroutines.flow.Flow
 import org.springframework.stereotype.Service
 
@@ -16,7 +17,7 @@ class UserService(
         return userCommandPort.createUser(User(name = name))
     }
 
-    override suspend fun getUser(id: Long): User? {
+    override suspend fun getUser(id: Long): User {
         return userQueryPort.getUser(id)
     }
 

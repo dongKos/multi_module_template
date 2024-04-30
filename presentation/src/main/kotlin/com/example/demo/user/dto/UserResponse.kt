@@ -1,4 +1,4 @@
-package com.example.demo.dto
+package com.example.demo.user.dto
 
 import com.example.demo.user.model.User
 

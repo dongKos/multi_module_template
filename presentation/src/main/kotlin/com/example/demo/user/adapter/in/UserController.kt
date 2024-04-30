@@ -1,8 +1,8 @@
-package com.example.demo.controller
+package com.example.demo.user.adapter.`in`
 
-import com.example.demo.dto.UserResponse
-import com.example.demo.usecase.UserUseCase
-import com.example.demo.controller.UserController.Companion.USER_PATH
+import com.example.demo.user.dto.UserResponse
+import com.example.demo.user.port.`in`.UserUseCase
+import com.example.demo.user.adapter.`in`.UserController.Companion.USER_PATH
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.springframework.web.bind.annotation.GetMapping

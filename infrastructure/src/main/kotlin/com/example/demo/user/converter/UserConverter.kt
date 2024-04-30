@@ -1,6 +1,6 @@
-package com.example.demo.converter
+package com.example.demo.user.converter
 
-import com.example.demo.entity.UserEntity
+import com.example.demo.user.entity.UserEntity
 import com.example.demo.user.model.User
 
 object UserConverter {
