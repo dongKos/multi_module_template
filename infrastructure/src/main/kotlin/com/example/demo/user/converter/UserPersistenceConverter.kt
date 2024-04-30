@@ -3,7 +3,7 @@ package com.example.demo.user.converter
 import com.example.demo.user.entity.UserEntity
 import com.example.demo.user.model.User
 
-object UserConverter {
+object UserPersistenceConverter {
     fun UserEntity.toUser(): User {
         return User(
             id = id,

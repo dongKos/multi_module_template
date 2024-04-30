@@ -3,6 +3,7 @@ package com.example.demo.user.adapter.`in`
 import com.example.demo.user.dto.UserResponse
 import com.example.demo.user.port.`in`.UserUseCase
 import com.example.demo.user.adapter.`in`.UserController.Companion.USER_PATH
+import com.example.demo.user.converter.UserPresentationConverter.toUserResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.springframework.web.bind.annotation.GetMapping
@@ -29,22 +30,18 @@ class UserController(
     suspend fun createUser(
         @RequestParam name: String,
     ): UserResponse {
-        return UserResponse(userUseCase.createUser(name = name))
+        return userUseCase.createUser(name = name).toUserResponse()
     }
 
     @GetMapping("/{id}")
     suspend fun findByIdOrNull(
         @PathVariable id: Long,
     ): UserResponse? {
-        return userUseCase.getUser(id = id)?.let {
-            UserResponse(it)
-        }
+        return userUseCase.getUser(id = id).toUserResponse()
     }
 
     @GetMapping
     suspend fun findAll(): Flow<UserResponse> {
-        return userUseCase.findAll().map {
-            UserResponse(it)
-        }
+        return userUseCase.findAll().map { it.toUserResponse() }
     }
 }

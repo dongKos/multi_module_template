@@ -1,7 +1,7 @@
 package com.example.demo.user.adapter.out
 
-import com.example.demo.user.converter.UserConverter.toUser
-import com.example.demo.user.converter.UserConverter.toUserEntity
+import com.example.demo.user.converter.UserPersistenceConverter.toUser
+import com.example.demo.user.converter.UserPersistenceConverter.toUserEntity
 import com.example.demo.user.exception.UserDomainException
 import com.example.demo.user.repository.UserR2DBCRepository
 import com.example.demo.user.model.User
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 import org.springframework.stereotype.Repository
 
 @Repository
-class UserPersistanceAdapter(
+class UserPersistenceAdapter(
     private val userR2DBCRepository: UserR2DBCRepository,
 ): UserQueryPort, UserCommandPort {
 
