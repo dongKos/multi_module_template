@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import org.springframework.stereotype.Service
 
 @Service
-class UserService(
+internal class UserService(
     private val userQueryPort: UserQueryPort,
     private val userCommandPort: UserCommandPort,
 ) : UserUseCase {

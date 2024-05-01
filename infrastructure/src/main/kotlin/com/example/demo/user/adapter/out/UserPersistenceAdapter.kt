@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 import org.springframework.stereotype.Repository
 
 @Repository
-class UserPersistenceAdapter(
+internal class UserPersistenceAdapter(
     private val userR2DBCRepository: UserR2DBCRepository,
 ) : UserQueryPort, UserCommandPort {
     override suspend fun createUser(user: User): User {
