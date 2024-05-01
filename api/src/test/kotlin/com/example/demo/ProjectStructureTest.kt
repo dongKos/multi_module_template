@@ -31,4 +31,17 @@ class ProjectStructureTest {
     val `incoming adapter들은 output port를 사용해선 안된다` =
         noClasses().that().resideInAPackage("..adapter.in..")
             .should().dependOnClassesThat().resideInAPackage("..port.out..")
+
+    @ArchTest
+    val `incoming adapter들은 repository를 직접 사용해선 안된다` =
+        noClasses().that().resideInAPackage("..adapter.in..")
+            .should().dependOnClassesThat().resideInAPackage("..repository..")
+
+    @ArchTest
+    val `controller는 repository를 직접 사용해선 안된다` =
+        noClasses().that().areAnnotatedWith("org.springframework.web.bind.annotation.RestController")
+            .or().areAnnotatedWith("org.springframework.web.bind.annotation.Controller")
+            .should().dependOnClassesThat().resideInAPackage("..repository..")
+            .andShould().dependOnClassesThat().areAnnotatedWith("org.springframework.stereotype.Repository")
+            .andShould().dependOnClassesThat().areAnnotatedWith("com.example.demo.annotation.OutgoingAdapter")
 }
