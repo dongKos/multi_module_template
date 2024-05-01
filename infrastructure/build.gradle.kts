@@ -7,6 +7,10 @@ dependencies {
     implementation(project(":application"))
     implementation(project(":domain"))
     implementation(project(":core"))
+
+    // Flyway
+    implementation("org.flywaydb:flyway-core")
+    implementation("org.flywaydb:flyway-mysql")
 }
 
 tasks.bootJar {

@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   r2dbc:
     url: r2dbc:mysql://localhost:13306/r2dbc_test?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8
@@ -8,3 +11,11 @@ spring:
       max-size: 20
       max-life-time: 10s
       validation-query: SELECT 1
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: jdbc:mysql://localhost:13306/r2dbc_test?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8&createDatabaseIfNotExist=true
+    user: root
+    password: root
+    locations: classpath:db/migration
