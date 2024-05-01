@@ -10,10 +10,10 @@ import com.example.demo.user.port.out.UserQueryPort
 import com.example.demo.user.repository.UserR2DBCRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import org.springframework.stereotype.Repository
+import org.springframework.stereotype.Service
 
 @OutgoingAdapter
-@Repository
+@Service
 internal class UserPersistenceAdapter(
     private val userR2DBCRepository: UserR2DBCRepository,
 ) : UserQueryPort, UserCommandPort {
