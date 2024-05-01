@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql-8:
+    image: 'mysql:8'
+    ports:
+      - '13306:3306'
+    environment:
+      MYSQL_DATABASE: r2dbc_test
+      MYSQL_ROOT_PASSWORD: root
+      TZ: "Asia/Seoul"  # 시간대 설정 추가
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
