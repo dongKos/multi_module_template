@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.spring") version "1.9.23"
+    id("java-test-fixtures")
 }
 
 dependencies {
@@ -49,5 +50,6 @@ subprojects {
         testImplementation("io.projectreactor:reactor-test")
         testImplementation("org.testcontainers:junit-jupiter")
         testImplementation("org.testcontainers:r2dbc")
+        testImplementation("com.tngtech.archunit:archunit-junit5:1.3.0")
     }
 }
