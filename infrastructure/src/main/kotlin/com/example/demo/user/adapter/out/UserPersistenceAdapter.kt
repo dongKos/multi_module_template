@@ -1,5 +1,6 @@
 package com.example.demo.user.adapter.out
 
+import com.example.demo.annotation.OutgoingAdapter
 import com.example.demo.user.converter.UserPersistenceConverter.toUser
 import com.example.demo.user.converter.UserPersistenceConverter.toUserEntity
 import com.example.demo.user.exception.UserDomainException
@@ -11,6 +12,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.springframework.stereotype.Repository
 
+@OutgoingAdapter
 @Repository
 internal class UserPersistenceAdapter(
     private val userR2DBCRepository: UserR2DBCRepository,

@@ -3,6 +3,7 @@ dependencies {
 
     implementation(project(":application"))
     implementation(project(":infrastructure"))
+    implementation(project(":core"))
 }
 
 tasks.bootJar {

@@ -1,5 +1,6 @@
 package com.example.demo.user.adapter.`in`
 
+import com.example.demo.annotation.IncomingAdapter
 import com.example.demo.user.adapter.`in`.UserController.Companion.USER_PATH
 import com.example.demo.user.converter.UserPresentationConverter.toUserResponse
 import com.example.demo.user.dto.UserResponse
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+@IncomingAdapter
 @RestController
 @RequestMapping(USER_PATH)
 class UserController(
