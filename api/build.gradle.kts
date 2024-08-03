@@ -1,11 +1,12 @@
 dependencies {
-    api(project(":presentation"))
+    implementation(project(":presentation"))
+    implementation(project(":infrastructure"))
 }
 
 tasks.bootJar {
-    enabled = false
+    enabled = true
 }
 
 tasks.jar {
-    enabled = true
+    enabled = false
 }

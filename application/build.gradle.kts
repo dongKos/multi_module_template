@@ -1,6 +1,6 @@
 dependencies {
     api(project(":domain"))
-    implementation(project(":core"))
+    api(project(":core"))
     implementation("org.springframework.data:spring-data-commons")
 }
 
